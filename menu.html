@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menu | Fuego a la Lata | Fine Caribbean & Latin Cuisine</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Explore our curated menu of Caribbean and Latin American specialties. Authentic flavors, modern techniques, premium ingredients." />
+  <link rel="canonical" href="https://fuegoalalata.com/menu" />
+  <meta name="theme-color" content="#e85d04" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --black:#0a0a0a;--charcoal:#1a1a1a;--dark-gray:#2a2a2a;--mid-gray:#666666;--light-gray:#999999;--cream:#f8f6f3;--off-white:#fafaf8;--orange:#e85d04;--orange-dark:#c74f03;--orange-light:#f7931e;--accent:#8b4513;
+      --serif:'Cormorant Garamond',Georgia,serif;--display:'Playfair Display',Georgia,serif;--sans:'Montserrat',-apple-system,system-ui,sans-serif;
+      --transition:all 0.6s cubic-bezier(0.4,0,0.2,1);--shadow-sm:0 2px 8px rgba(0,0,0,0.08);--shadow-md:0 4px 24px rgba(0,0,0,0.12);--shadow-lg:0 8px 40px rgba(0,0,0,0.16);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:var(--sans);font-weight:300;line-height:1.7;color:var(--dark-gray);background:var(--off-white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+    img{max-width:100%;display:block;height:auto}
+    a{text-decoration:none;color:inherit;transition:var(--transition)}
+    .container{max-width:1400px;margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+    
+    /* Scroll Progress Bar */
+    .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--orange-light));z-index:9998;transform-origin:left;transform:scaleX(0);transition:transform 0.1s ease}
+    
+    /* Navigation */
+    .nav-wrapper{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,250,248,0.95);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(232,93,4,0.15);box-shadow:var(--shadow-sm)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;max-width:1400px;margin:0 auto;padding-left:clamp(20px,5vw,80px);padding-right:clamp(20px,5vw,80px)}
+    .brand{display:flex;align-items:center;gap:16px;font-family:var(--display);font-size:clamp(18px,2.5vw,24px);font-weight:600;letter-spacing:0.5px;color:var(--charcoal);position:relative}
+    .brand::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--orange);transition:width 0.4s ease}
+    .brand:hover::after{width:100%}
+    .brand img{width:60px;height:60px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(232,93,4,0.3));transition:var(--transition)}
+    .brand:hover img{transform:rotate(360deg) scale(1.1);filter:drop-shadow(0 4px 16px rgba(232,93,4,0.5))}
+    .nav-links{display:flex;gap:clamp(24px,3vw,48px);list-style:none;align-items:center}
+    .nav-links a{font-size:14px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-gray);position:relative;padding:8px 0;overflow:hidden}
+    .nav-links a::before{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--orange);transform:translateX(-50%);transition:width 0.4s ease}
+    .nav-links a:hover{color:var(--charcoal)}
+    .nav-links a:hover::before{width:100%}
+    .btn-reserve{padding:12px 32px;background:var(--orange);color:white;font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;border:1px solid var(--orange);border-radius:0;cursor:pointer;position:relative;overflow:hidden;z-index:1}
+    .btn-reserve::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:var(--orange-dark);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.6s ease,height 0.6s ease;z-index:-1}
+    .btn-reserve:hover::before{width:300px;height:300px}
+    .btn-reserve:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,93,4,0.4)}
+    
+    /* Page Header */
+    .page-header{padding:140px 0 80px;background:linear-gradient(rgba(232,93,4,0.92),rgba(247,147,30,0.92)),url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000&auto=format&fit=crop') center/cover;text-align:center;color:white;position:relative}
+    .page-header::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');opacity:0.3}
+    .page-header-content{position:relative;z-index:2}
+    .page-header h1{font-size:clamp(40px,6vw,64px);font-weight:500;margin-bottom:20px;line-height:1.1}
+    .page-header p{font-size:18px;max-width:700px;margin:0 auto;opacity:0.95}
+    
+    /* Section Styling */
+    section{padding:clamp(80px,12vw,120px) 0}
+    .section-header{text-align:center;max-width:800px;margin:0 auto 80px}
+    .section-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:16px;position:relative;padding:0 20px}
+    .section-label::before,.section-label::after{content:'';position:absolute;top:50%;width:40px;height:1px;background:var(--orange)}
+    .section-label::before{left:100%;margin-left:8px}
+    .section-label::after{right:100%;margin-right:8px}
+    .section-title{font-size:clamp(32px,5vw,48px);font-weight:500;color:var(--charcoal);margin-bottom:24px;line-height:1.2}
+    .section-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--orange),transparent);margin:32px auto;position:relative}
+    .section-divider::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--orange);border-radius:50%}
+    .section-description{font-size:18px;font-weight:300;color:var(--mid-gray);line-height:1.8}
+    
+    /* Menu Section */
+    .menu{background:white}
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(24px,4vw,40px);max-width:1200px;margin:0 auto}
+    .menu-card{background:var(--off-white);border:1px solid rgba(232,93,4,0.1);padding:32px;transition:var(--transition);position:relative;overflow:hidden}
+    .menu-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(232,93,4,0.05),transparent 70%);transform:scale(0);transition:transform 0.6s ease;pointer-events:none}
+    .menu-card:hover{border-color:var(--orange);box-shadow:var(--shadow-md);transform:translateY(-4px)}
+    .menu-card:hover::before{transform:scale(1)}
+    .menu-card h3{font-family:var(--display);font-size:22px;font-weight:500;color:var(--charcoal);margin-bottom:20px;border-bottom:2px solid rgba(232,93,4,0.2);padding-bottom:12px;position:relative}
+    .menu-card h3::after{content:'';position:absolute;bottom:-2px;left:0;width:50px;height:2px;background:var(--orange)}
+    .menu-items{list-style:none;margin-top:16px}
+    .menu-items li{padding:12px 0;border-bottom:1px solid rgba(232,93,4,0.08);transition:all 0.3s ease;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+    .menu-items li:hover{color:var(--orange);transform:translateX(8px);background:linear-gradient(90deg,transparent,rgba(232,93,4,0.05))}
+    .menu-items strong{font-weight:600;font-size:15px;flex:1}
+    .menu-items small{display:block;font-size:13px;color:var(--mid-gray);margin-top:4px;font-weight:300}
+    .price{font-family:var(--serif);font-weight:600;color:var(--orange);font-size:16px;white-space:nowrap}
+    
+    /* CTA */
+    .cta{background:linear-gradient(rgba(232,93,4,0.92),rgba(247,147,30,0.92)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2000&auto=format&fit=crop') center/cover;color:white;text-align:center}
+    .cta .section-title{color:white}
+    .cta .section-description{color:rgba(255,255,255,0.9)}
+    .order-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:40px}
+    .order-btn{padding:16px 36px;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:50px;transition:var(--transition);display:inline-flex;align-items:center;gap:10px;box-shadow:var(--shadow-md)}
+    .order-btn:hover{transform:translateY(-4px) scale(1.05);box-shadow:var(--shadow-lg)}
+    .order-btn.doordash{background:#ff3008;color:white}
+    .order-btn.ubereats{background:#00d4aa;color:white}
+    .order-btn.postmates{background:#000000;color:white}
+    
+    /* Footer */
+    footer{background:var(--black);color:rgba(255,255,255,0.6);padding:80px 0 40px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+    .footer-brand h4{font-size:24px;color:var(--orange-light);margin-bottom:20px}
+    .footer-brand p{font-size:14px;line-height:1.8;color:rgba(255,255,255,0.5)}
+    .footer-section h4{font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange-light);margin-bottom:24px}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:12px}
+    .footer-links a{font-size:14px;color:rgba(255,255,255,0.6);transition:all 0.3s ease;position:relative;display:inline-block}
+    .footer-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--orange-light);transition:width 0.3s ease}
+    .footer-links a:hover{color:var(--orange-light);transform:translateX(4px)}
+    .footer-links a:hover::after{width:100%}
+    .footer-bottom{text-align:center;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1);font-size:13px;color:rgba(255,255,255,0.4)}
+    
+    /* Responsive */
+    @media (max-width:1024px){
+      .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+    }
+    @media (max-width:768px){
+      .nav-links{display:none}
+      .menu-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .section-label::before,.section-label::after{display:none}
+      .order-buttons{flex-direction:column;align-items:center}
+      .order-btn{width:100%;max-width:300px;justify-content:center}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper">
+    <nav>
+      <a class="brand" href="index.html">
+        <img src="fuego-logo.jpg" alt="Fuego a la Lata"/>
+        <span>FUEGO A LA LATA</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="index.html#location">Visit</a></li>
+      </ul>
+      <a class="btn-reserve" href="https://order.online/store/-33939279/?pickup=true&hideModal=true&utm_source=gfo&rwg_token=ACgRB3fcivZRRqLKOmtwAIpmvhMT4GbGuZivhIQzqvohrcDHJIhuaeBOS9w6Kk2tuNc9j8szXfxFN1bqCbaLzgRlGdxrn9rb8Q%3D%3D" target="_blank" rel="noopener">Order Now</a>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-header-content">
+      <h1>Our Menu</h1>
+      <p>A curated selection of Caribbean and Latin American specialties, each celebrating the vibrant colors, textures, and flavors of island cuisine.</p>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <section class="menu">
+    <div class="container">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <h3>🐔 Poultry Specialties</h3>
+          <ul class="menu-items">
+            <li>
+              <div>
+                <strong>Whole Charcoal-Grilled Chicken</strong>
+                <small>Marinated in Caribbean spices, served with fresh celery leaves</small>
+              </div>
+              <span class="price">$23.40</span>
+            </li>
+            <li>
+              <div><strong>Bone-in Fried Chicken</strong><small>Chicharrón De Pollo Con Hueso</small></div>
+              <span class="price">$19.48</span>
+            </li>
+            <li>
+              <div><strong>Boneless Fried Chicken</strong><small>Chicharrón De Pollo Sin Hueso</small></div>
+              <span class="price">$19.48</span>
+            </li>
+            <li>
+              <div><strong>Grilled Chicken Breast</strong></div>
+              <span class="price">$28.58</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-card">
+          <h3>🍽️ Mofongos</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Shrimp Mofongo</strong><small>Mofongo De Camarones</small></div>
+              <span class="price">$32.48</span>
+            </li>
+            <li>
+              <div><strong>Mixed Mofongo</strong><small>With cheese, sausage and pork rinds</small></div>
+              <span class="price">$32.48</span>
+            </li>
+            <li>
+              <div><strong>Grilled Or Fried Chicken Mofongo</strong></div>
+              <span class="price">$26.00</span>
+            </li>
+            <li>
+              <div><strong>Garlic Mofongo</strong><small>Mofongo De Ajo</small></div>
+              <span class="price">$25.98</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-card">
+          <h3>🥩 Premium Meats</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Land And Sea</strong></div>
+              <span class="price">$51.98</span>
+            </li>
+            <li>
+              <div><strong>Grilled Skirt Steak</strong></div>
+              <span class="price">$46.78</span>
+            </li>
+            <li>
+              <div><strong>Smoked Pork Chops</strong></div>
+              <span class="price">$31.18</span>
+            </li>
+            <li>
+              <div><strong>Fried Smoked Pork Strips</strong></div>
+              <span class="price">$28.58</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-card">
+          <h3>🌮 Tacos & More</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Shrimp Quesadilla With Fries</strong></div>
+              <span class="price">$20.78</span>
+            </li>
+            <li>
+              <div><strong>Beef Patacon</strong></div>
+              <span class="price">$18.18</span>
+            </li>
+            <li>
+              <div><strong>Beef Tacos</strong></div>
+              <span class="price">$18.18</span>
+            </li>
+            <li>
+              <div><strong>Mixed Yaroa</strong></div>
+              <span class="price">$18.18</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-card">
+          <h3>🥪 Sandwiches</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Cubano With Fries</strong></div>
+              <span class="price">$19.48</span>
+            </li>
+            <li>
+              <div><strong>Chimi | Dominican Burger</strong></div>
+              <span class="price">$16.89</span>
+            </li>
+            <li>
+              <div><strong>Philly Cheesesteak</strong></div>
+              <span class="price">$16.88</span>
+            </li>
+            <li>
+              <div><strong>Grilled Chicken Sandwich</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-card">
+          <h3>🍲 Appetizers</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Big Chicken Soup With White Rice</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+            <li>
+              <div><strong>Loaded Beef Nachos</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+            <li>
+              <div><strong>Fried Calamari</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+            <li>
+              <div><strong>Tropical Wings</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Ready to Order?</h2>
+        <p class="section-description">Experience the flavors of the Caribbean. Order online for pickup and delivery.</p>
+      </div>
+      <div class="order-buttons">
+        <a class="order-btn doordash" href="https://order.online/store/-33939279/?pickup=true&hideModal=true&utm_source=gfo&rwg_token=ACgRB3fcivZRRqLKOmtwAIpmvhMT4GbGuZivhIQzqvohrcDHJIhuaeBOS9w6Kk2tuNc9j8szXfxFN1bqCbaLzgRlGdxrn9rb8Q%3D%3D" target="_blank" rel="noopener">🚗 Order on DoorDash</a>
+        <a class="order-btn ubereats" href="https://www.ubereats.com/store/fuego-a-la-lata-new-city/JtLgCFOvT26eLtCBv-Xugg?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener">🍽️ Order on Uber Eats</a>
+        <a class="order-btn postmates" href="https://postmates.com/store/fuego-a-la-lata-new-city/JtLgCFOvT26eLtCBv-Xugg?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener">📦 Order on Postmates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>FUEGO A LA LATA</h4>
+          <p>Celebrating the rich culinary heritage of the Caribbean and Latin America through contemporary fine dining.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="index.html#location">Visit</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Hours</h4>
+          <ul class="footer-links">
+            <li>Online Ordering</li>
+            <li>11:00 AM - 7:40 PM</li>
+            <li>Daily</li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>730 Route 304</li>
+            <li>New City, NY 10956</li>
+            <li><br></li>
+            <li><a href="mailto:hello@fuegoalalata.com">hello@fuegoalalata.com</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Fuego a la Lata. All Rights Reserved. | Fine Caribbean & Latin Cuisine</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll',()=>{
+      const scrollProgress=document.querySelector('.scroll-progress');
+      const windowHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+      const scrolled=(window.scrollY/windowHeight);
+      scrollProgress.style.transform=`scaleX(${scrolled})`;
+    });
+  </script>
+</body>
+</html>
