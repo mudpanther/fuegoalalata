@@ -1,701 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuego a la Lata - Authentic Caribbean & Latin Flavors in New City, NY</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fuego a la Lata | Fine Caribbean & Latin Cuisine — New City, NY</title>
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #e85d04 100%);
-            color: #333;
-            overflow-x: hidden;
-        }
+  <!-- Primary SEO -->
+  <meta name="description" content="Experience elevated Caribbean and Latin American cuisine in an intimate fine dining setting. Michelin-quality execution of traditional island flavors. New City, NY." />
+  <link rel="canonical" href="https://fuegoalalata.com/" />
+  <meta name="theme-color" content="#e85d04" />
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #e85d04, #f7931e, #ff6b35);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #e85d04;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e85d04" width="1200" height="600"/><circle fill="%23f7931e" cx="200" cy="100" r="80" opacity="0.7"/><circle fill="%23ff6b35" cx="800" cy="200" r="60" opacity="0.8"/><circle fill="%23ffd60a" cx="400" cy="400" r="100" opacity="0.6"/><circle fill="%23003566" cx="1000" cy="450" r="70" opacity="0.7"/></svg>');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .hero-content {
-            color: white;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            animation: slideUp 1s ease-out;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero > p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: slideUp 1s ease-out 0.3s both;
-        }
-
-        .restaurant-story {
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: slideUp 1s ease-out 0.5s both;
-        }
-
-        .restaurant-story p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-        }
-
-        .restaurant-story .tagline {
-            font-size: 1.1rem;
-            color: #ffd60a;
-            font-weight: 500;
-            margin-bottom: 0;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: linear-gradient(45deg, #e85d04, #f7931e);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            animation: slideUp 1s ease-out 0.6s both;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(232, 93, 4, 0.4);
-        }
-
-        /* Main Content */
-        main {
-            background: white;
-            position: relative;
-            z-index: 1;
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, #e85d04, #f7931e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Menu Section */
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .menu-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-left: 4px solid #e85d04;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-10px) rotate(1deg);
-            box-shadow: 0 20px 40px rgba(232, 93, 4, 0.15);
-        }
-
-        .menu-card h3 {
-            color: #333;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .menu-card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #e85d04;
-        }
-
-        .menu-items {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .menu-items li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .menu-items li:hover {
-            color: #e85d04;
-            transform: translateX(10px);
-            background: linear-gradient(90deg, transparent, rgba(232, 93, 4, 0.1));
-        }
-
-        .featured-item {
-            background: linear-gradient(135deg, #e85d04, #f7931e);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin-bottom: 1rem;
-        }
-
-        .featured-item h4 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .featured-item .price {
-            color: #ffd60a;
-            font-size: 1.4rem;
-        }
-
-        /* Hours Section */
-        .hours-container {
-            background: linear-gradient(135deg, #e85d04 0%, #f7931e 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .hours-info {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .address {
-            font-size: 1.1rem;
-            margin-top: 2rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-card {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #e85d04, #f7931e);
-            color: white;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(232, 93, 4, 0.3);
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        .contact-card p,
-        .contact-card a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* Chicken animations */
-        .chicken-decoration {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-size: 3rem;
-            animation: chickenwiggle 3s ease-in-out infinite;
-            z-index: 1000;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .chicken-decoration:hover {
-            font-size: 3.5rem;
-        }
-
-        .chicken-divider {
-            text-align: center;
-            margin: 3rem 0;
-            font-size: 2rem;
-            animation: march 3s ease-in-out infinite;
-        }
-
-        /* Scroll Progress */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(45deg, #e85d04, #f7931e);
-            z-index: 10000;
-            transition: width 0.1s ease;
-        }
-
-        /* Animations */
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes chickenwiggle {
-            0%, 100% {
-                transform: rotate(-5deg);
-            }
-            50% {
-                transform: rotate(5deg);
-            }
-        }
-
-        @keyframes march {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(20px);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @keyframes marchAcross {
-            0% {
-                transform: translateX(-200px);
-            }
-            100% {
-                transform: translateX(calc(100vw + 200px));
-            }
-        }
-
-        @keyframes salsa {
-            0%, 100% {
-                transform: rotate(0deg) scale(1);
-            }
-            25% {
-                transform: rotate(-10deg) scale(1.1);
-            }
-            75% {
-                transform: rotate(10deg) scale(1.1);
-            }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .restaurant-story {
-                margin: 0 1rem 2rem 1rem;
-                padding: 1rem;
-            }
-
-            .restaurant-story p {
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .order-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .order-button {
-                width: 200px;
-                text-align: center;
-            }
-
-            .cta-buttons {
-                width: 100%;
-            }
-        }
-    </style>
+  <style>
+    :root{
+      --black:#0a0a0a;--charcoal:#1a1a1a;--dark-gray:#2a2a2a;--mid-gray:#666666;--light-gray:#999999;--cream:#f8f6f3;--off-white:#fafaf8;--orange:#e85d04;--orange-dark:#c74f03;--orange-light:#f7931e;--accent:#8b4513;
+      --serif:'Cormorant Garamond',Georgia,serif;--display:'Playfair Display',Georgia,serif;--sans:'Montserrat',-apple-system,system-ui,sans-serif;
+      --transition:all 0.6s cubic-bezier(0.4,0,0.2,1);--shadow-sm:0 2px 8px rgba(0,0,0,0.08);--shadow-md:0 4px 24px rgba(0,0,0,0.12);--shadow-lg:0 8px 40px rgba(0,0,0,0.16);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:var(--sans);font-weight:300;line-height:1.7;color:var(--dark-gray);background:var(--off-white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+    body.loading{overflow:hidden}
+    img{max-width:100%;display:block;height:auto}
+    a{text-decoration:none;color:inherit;transition:var(--transition)}
+    .container{max-width:1400px;margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+    
+    /* Loading Screen */
+    .loader-wrapper{position:fixed;inset:0;background:linear-gradient(135deg,#e85d04,#f7931e);display:grid;place-items:center;z-index:9999;transition:opacity 0.6s ease,visibility 0.6s ease}
+    .loader-wrapper.hidden{opacity:0;visibility:hidden}
+    .loader-content{text-align:center;animation:fadeInScale 0.8s ease-out}
+    .loader-logo{width:140px;height:140px;margin:0 auto 24px;object-fit:contain;filter:drop-shadow(0 0 40px rgba(255,255,255,0.6));animation:pulse 2s ease-in-out infinite}
+    .loader-text{font-family:var(--display);font-size:24px;color:white;letter-spacing:3px;margin-top:20px;text-shadow:2px 2px 6px rgba(0,0,0,0.3)}
+    .loader-bar{width:200px;height:2px;background:rgba(255,255,255,0.3);margin:24px auto 0;position:relative;overflow:hidden}
+    .loader-bar::after{content:'';position:absolute;top:0;left:0;height:100%;width:40%;background:linear-gradient(90deg,transparent,white,transparent);animation:loading 1.5s ease-in-out infinite}
+    @keyframes loading{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
+    @keyframes pulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 40px rgba(255,255,255,0.6))}50%{transform:scale(1.05);filter:drop-shadow(0 0 60px rgba(255,255,255,0.8))}}
+    @keyframes fadeInScale{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+    
+    /* Scroll Progress Bar */
+    .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--orange-light));z-index:9998;transform-origin:left;transform:scaleX(0);transition:transform 0.1s ease}
+    
+    /* Navigation */
+    .nav-wrapper{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,250,248,0.85);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(232,93,4,0.15);transition:all 0.4s ease;transform:translateY(0)}
+    .nav-wrapper.hidden{transform:translateY(-100%)}
+    .nav-wrapper.scrolled{background:rgba(250,250,248,0.95);box-shadow:var(--shadow-md)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;max-width:1400px;margin:0 auto;padding-left:clamp(20px,5vw,80px);padding-right:clamp(20px,5vw,80px)}
+    .brand{display:flex;align-items:center;gap:16px;font-family:var(--display);font-size:clamp(18px,2.5vw,24px);font-weight:600;letter-spacing:0.5px;color:var(--charcoal);position:relative}
+    .brand::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--orange);transition:width 0.4s ease}
+    .brand:hover::after{width:100%}
+    .brand img{width:60px;height:60px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(232,93,4,0.3));transition:var(--transition)}
+    .brand:hover img{transform:rotate(360deg) scale(1.1);filter:drop-shadow(0 4px 16px rgba(232,93,4,0.5))}
+    .nav-links{display:flex;gap:clamp(24px,3vw,48px);list-style:none;align-items:center}
+    .nav-links a{font-size:14px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-gray);position:relative;padding:8px 0;overflow:hidden}
+    .nav-links a::before{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--orange);transform:translateX(-50%);transition:width 0.4s ease}
+    .nav-links a:hover{color:var(--charcoal)}
+    .nav-links a:hover::before{width:100%}
+    .btn-reserve{padding:12px 32px;background:var(--orange);color:white;font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;border:1px solid var(--orange);border-radius:0;cursor:pointer;position:relative;overflow:hidden;z-index:1}
+    .btn-reserve::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:var(--orange-dark);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.6s ease,height 0.6s ease;z-index:-1}
+    .btn-reserve:hover::before{width:300px;height:300px}
+    .btn-reserve:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,93,4,0.4)}
+    
+    /* Hero with Parallax */
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;color:white}
+    .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;transform:scale(1.1);transition:transform 0.1s ease}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(232,93,4,0.7),rgba(247,147,30,0.8))}
+    .hero-content{position:relative;z-index:2;max-width:900px;padding:120px 40px 80px;text-align:center}
+    .hero-content>*{opacity:0;animation:fadeInUp 1s ease-out forwards}
+    .hero-content>*:nth-child(1){animation-delay:0.2s}
+    .hero-content>*:nth-child(2){animation-delay:0.4s}
+    .hero-content>*:nth-child(3){animation-delay:0.6s}
+    .hero-content>*:nth-child(4){animation-delay:0.8s}
+    .hero-content>*:nth-child(5){animation-delay:1s}
+    .hero-content>*:nth-child(6){animation-delay:1.2s}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .hero-logo{width:180px;height:180px;margin:0 auto 32px;object-fit:contain;filter:drop-shadow(0 0 60px rgba(255,255,255,0.5));transition:var(--transition)}
+    .hero-logo:hover{transform:scale(1.1) rotate(5deg);filter:drop-shadow(0 0 80px rgba(255,255,255,0.7))}
+    .hero-badge{display:inline-block;font-family:var(--serif);font-size:14px;font-style:italic;letter-spacing:2px;color:rgba(255,255,255,0.95);margin-bottom:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);position:relative;overflow:hidden}
+    .hero-badge::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);animation:shimmer 3s ease-in-out infinite}
+    @keyframes shimmer{0%{left:-100%}100%{left:200%}}
+    .hero h1{font-size:clamp(36px,6vw,72px);font-weight:500;color:white;margin-bottom:20px;line-height:1.1;letter-spacing:-0.5px}
+    .hero-subtitle{font-family:var(--serif);font-size:clamp(20px,3vw,28px);font-style:italic;color:rgba(255,255,255,0.95);margin-bottom:16px;font-weight:300}
+    .hero-description{font-size:16px;font-weight:300;color:rgba(255,255,255,0.85);margin-bottom:40px;letter-spacing:0.5px}
+    .hero-cta{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+    .btn-primary{padding:16px 40px;background:white;color:var(--orange);font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1px solid white;transition:var(--transition);display:inline-block;position:relative;overflow:hidden}
+    .btn-primary::after{content:'→';position:absolute;right:20px;opacity:0;transition:all 0.4s ease}
+    .btn-primary:hover{padding-right:50px;background:var(--orange-light);color:white;border-color:var(--orange-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(247,147,30,0.4)}
+    .btn-primary:hover::after{opacity:1;right:20px}
+    .btn-secondary{padding:16px 40px;background:transparent;color:white;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.4);transition:var(--transition);display:inline-block;position:relative;overflow:hidden}
+    .btn-secondary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,0.1);transition:left 0.4s ease}
+    .btn-secondary:hover{background:rgba(255,255,255,0.1);border-color:white}
+    .btn-secondary:hover::before{left:100%}
+    
+    /* Scroll Reveal Elements */
+    .reveal{opacity:0;transform:translateY(60px);transition:all 1s cubic-bezier(0.4,0,0.2,1)}
+    .reveal.active{opacity:1;transform:translateY(0)}
+    .reveal-left{opacity:0;transform:translateX(-60px);transition:all 1s cubic-bezier(0.4,0,0.2,1)}
+    .reveal-left.active{opacity:1;transform:translateX(0)}
+    .reveal-right{opacity:0;transform:translateX(60px);transition:all 1s cubic-bezier(0.4,0,0.2,1)}
+    .reveal-right.active{opacity:1;transform:translateX(0)}
+    .reveal-scale{opacity:0;transform:scale(0.9);transition:all 1s cubic-bezier(0.4,0,0.2,1)}
+    .reveal-scale.active{opacity:1;transform:scale(1)}
+    
+    /* Section Styling */
+    section{padding:clamp(80px,12vw,140px) 0;position:relative}
+    .section-header{text-align:center;max-width:800px;margin:0 auto 80px}
+    .section-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:16px;position:relative;padding:0 20px}
+    .section-label::before,.section-label::after{content:'';position:absolute;top:50%;width:40px;height:1px;background:var(--orange)}
+    .section-label::before{left:100%;margin-left:8px}
+    .section-label::after{right:100%;margin-right:8px}
+    .section-title{font-size:clamp(32px,5vw,56px);font-weight:500;color:var(--charcoal);margin-bottom:24px;line-height:1.2;position:relative;display:inline-block}
+    .section-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--orange),transparent);margin:32px auto;position:relative}
+    .section-divider::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--orange);border-radius:50%}
+    .section-description{font-size:18px;font-weight:300;color:var(--mid-gray);line-height:1.8;max-width:700px;margin:0 auto}
+    
+    /* About Section */
+    .about{background:white;position:relative;overflow:hidden}
+    .about::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(232,93,4,0.03),transparent 70%);pointer-events:none}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,100px);align-items:center}
+    .about-content{padding:40px 0}
+    .about-content h3{font-size:clamp(24px,3vw,36px);margin-bottom:24px;color:var(--charcoal);position:relative;display:inline-block}
+    .about-content h3::after{content:'';position:absolute;bottom:-8px;left:0;width:60px;height:3px;background:var(--orange)}
+    .about-content p{margin-bottom:20px;font-size:16px;line-height:1.9;color:var(--mid-gray)}
+    .about-content p:last-of-type{margin-bottom:32px}
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+    .feature-item{padding:24px;background:var(--off-white);border-left:3px solid var(--orange);transition:var(--transition);position:relative;overflow:hidden}
+    .feature-item::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(232,93,4,0.05),transparent);transition:left 0.6s ease}
+    .feature-item:hover{background:var(--cream);transform:translateX(8px);box-shadow:var(--shadow-sm)}
+    .feature-item:hover::before{left:100%}
+    .feature-item h4{font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+    .feature-item p{font-size:14px;margin:0;color:var(--mid-gray)}
+    .about-image{position:relative;height:600px;overflow:hidden;border-radius:4px}
+    .about-image::before{content:'';position:absolute;inset:0;background:linear-gradient(45deg,rgba(232,93,4,0.1),transparent);z-index:1;opacity:0;transition:opacity 0.6s ease}
+    .about-image:hover::before{opacity:1}
+    .about-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.4,0,0.2,1)}
+    .about-image:hover img{transform:scale(1.08)}
+    
+    /* Menu Section */
+    .menu{background:white}
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(24px,4vw,40px);max-width:1200px;margin:0 auto}
+    .menu-card{background:var(--off-white);border:1px solid rgba(232,93,4,0.1);padding:32px;transition:var(--transition);position:relative;overflow:hidden;opacity:0;transform:translateY(30px);animation:fadeInUp 0.8s ease-out forwards}
+    .menu-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(232,93,4,0.05),transparent 70%);transform:scale(0);transition:transform 0.6s ease;pointer-events:none}
+    .menu-card:hover{border-color:var(--orange);box-shadow:var(--shadow-md);transform:translateY(-4px)}
+    .menu-card:hover::before{transform:scale(1)}
+    .menu-card h3{font-family:var(--display);font-size:22px;font-weight:500;color:var(--charcoal);margin-bottom:20px;border-bottom:2px solid rgba(232,93,4,0.2);padding-bottom:12px;position:relative}
+    .menu-card h3::after{content:'';position:absolute;bottom:-2px;left:0;width:50px;height:2px;background:var(--orange)}
+    .menu-items{list-style:none;margin-top:16px}
+    .menu-items li{padding:12px 0;border-bottom:1px solid rgba(232,93,4,0.08);transition:all 0.3s ease;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+    .menu-items li:hover{color:var(--orange);transform:translateX(8px);background:linear-gradient(90deg,transparent,rgba(232,93,4,0.05))}
+    .menu-items strong{font-weight:600;font-size:15px;flex:1}
+    .menu-items small{display:block;font-size:13px;color:var(--mid-gray);margin-top:4px;font-weight:300}
+    .price{font-family:var(--serif);font-weight:600;color:var(--orange);font-size:16px;white-space:nowrap}
+    
+    /* Location */
+    .location{background:transparent}
+    .location-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start}
+    .map-container{height:500px;border:1px solid rgba(232,93,4,0.2);box-shadow:var(--shadow-md);overflow:hidden;position:relative}
+    .map-container::before{content:'';position:absolute;inset:0;border:2px solid transparent;transition:border-color 0.6s ease;pointer-events:none;z-index:1}
+    .map-container:hover::before{border-color:rgba(232,93,4,0.4)}
+    .map-container iframe{width:100%;height:100%;border:0;filter:grayscale(0.3) contrast(1.1);transition:filter 0.6s ease}
+    .map-container:hover iframe{filter:grayscale(0) contrast(1)}
+    .hours-card{background:var(--off-white);padding:48px;border-left:3px solid var(--orange);position:relative;overflow:hidden}
+    .hours-card::before{content:'';position:absolute;top:0;right:0;width:100px;height:100px;background:radial-gradient(circle,rgba(232,93,4,0.1),transparent 70%);pointer-events:none}
+    .hours-card h3{font-size:28px;margin-bottom:32px;color:var(--charcoal)}
+    .hours-line{display:flex;justify-content:space-between;padding:20px 0;border-bottom:1px solid rgba(232,93,4,0.15);font-size:15px;transition:all 0.3s ease}
+    .hours-line:hover{padding-left:8px;background:rgba(232,93,4,0.03)}
+    .hours-line:last-child{border-bottom:0}
+    .hours-line span{color:var(--mid-gray);font-weight:300}
+    .hours-line strong{color:var(--charcoal);font-weight:600}
+    .contact-info{margin-top:40px;padding-top:32px;border-top:1px solid rgba(232,93,4,0.15)}
+    .contact-item{margin-bottom:20px;transition:transform 0.3s ease}
+    .contact-item:hover{transform:translateX(4px)}
+    .contact-item label{display:block;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+    .contact-item p{font-size:16px;color:var(--charcoal);font-weight:400}
+    
+    /* CTA Section */
+    .cta{background:linear-gradient(rgba(232,93,4,0.92),rgba(247,147,30,0.92)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2000&auto=format&fit=crop') center/cover;background-attachment:fixed;color:white;text-align:center;position:relative}
+    .cta::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');opacity:0.3;animation:float-pattern 20s linear infinite}
+    @keyframes float-pattern{0%{transform:translateY(0)}100%{transform:translateY(-100px)}}
+    .cta .section-title{color:white;margin-bottom:20px}
+    .cta .section-description{color:rgba(255,255,255,0.9);margin-bottom:40px}
+    .order-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:40px}
+    .order-btn{padding:16px 36px;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:50px;transition:var(--transition);display:inline-flex;align-items:center;gap:10px;box-shadow:var(--shadow-md);border:1px solid rgba(255,255,255,0.2)}
+    .order-btn:hover{transform:translateY(-4px) scale(1.05);box-shadow:var(--shadow-lg)}
+    .order-btn.doordash{background:#ff3008;color:white}
+    .order-btn.ubereats{background:#00d4aa;color:white}
+    .order-btn.postmates{background:#000000;color:white}
+    
+    /* Footer */
+    footer{background:var(--black);color:rgba(255,255,255,0.6);padding:80px 0 40px;position:relative}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+    .footer-brand{max-width:350px}
+    .footer-brand h4{font-size:24px;color:var(--orange-light);margin-bottom:20px}
+    .footer-brand p{font-size:14px;line-height:1.8;color:rgba(255,255,255,0.5)}
+    .footer-section h4{font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange-light);margin-bottom:24px}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:12px}
+    .footer-links a{font-size:14px;color:rgba(255,255,255,0.6);transition:all 0.3s ease;position:relative;display:inline-block}
+    .footer-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--orange-light);transition:width 0.3s ease}
+    .footer-links a:hover{color:var(--orange-light);transform:translateX(4px)}
+    .footer-links a:hover::after{width:100%}
+    .footer-bottom{text-align:center;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1);font-size:13px;color:rgba(255,255,255,0.4)}
+    
+    /* Floating Reserve Button */
+    .float-reserve{position:fixed;bottom:40px;right:40px;z-index:999;animation:float 3s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .float-reserve a{display:flex;align-items:center;gap:12px;padding:16px 28px;background:var(--orange);color:white;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;border-radius:50px;box-shadow:0 8px 32px rgba(232,93,4,0.5);transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden}
+    .float-reserve a::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(255,255,255,0.3);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.6s ease,height 0.6s ease}
+    .float-reserve a:hover::before{width:200px;height:200px}
+    .float-reserve a:hover{background:var(--orange-dark);transform:translateY(-4px) scale(1.05);box-shadow:0 12px 40px rgba(232,93,4,0.6)}
+    
+    /* Responsive */
+    @media (max-width:1024px){
+      .about-grid,.location-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+      .about-image{height:400px}
+    }
+    @media (max-width:768px){
+      .nav-links{display:none}
+      .menu-grid{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .float-reserve{bottom:20px;right:20px}
+      .hours-card{padding:32px}
+      .section-label::before,.section-label::after{display:none}
+      .order-buttons{flex-direction:column;align-items:center}
+      .order-btn{width:100%;max-width:300px;justify-content:center}
+    }
+  </style>
 </head>
-<body>
-    <div class="scroll-progress"></div>
-    
-    <!-- Chicken parade -->
-    <div style="position: fixed; bottom: 20px; left: -250px; z-index: 500; font-size: 2rem; animation: marchAcross 12s linear infinite;">
-        🐔 🌶️ 🐓 🔥 🐔 🌶️ 🐓
+<body class="loading">
+
+  <!-- Loading Screen -->
+  <div class="loader-wrapper">
+    <div class="loader-content">
+      <img class="loader-logo" src="fuego-logo.jpg" alt="Fuego a la Lata"/>
+      <div class="loader-text">FUEGO A LA LATA</div>
+      <div class="loader-bar"></div>
     </div>
-    
-    <!-- Floating elements -->
-    <div style="position: fixed; top: 15%; right: 8%; font-size: 3rem; z-index: 100; animation: float 4s ease-in-out infinite;">🌶️</div>
-    <div style="position: fixed; top: 70%; left: 5%; font-size: 2.5rem; z-index: 100; animation: salsa 3s ease-in-out infinite;">🔥</div>
-    
-    <div class="chicken-decoration">🐔</div>
-    
-    <header>
-        <nav>
-            <div class="logo">🔥 Fuego a la Lata</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#hours">Hours</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  </div>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>🔥 Fuego a la Lata 🔥</h1>
-            <p>Authentic Caribbean & Latin Flavors in New City, NY</p>
-            <div class="restaurant-story">
-                <p>Experience the vibrant flavors of the Caribbean and Latin America right here in New City! At Fuego a la Lata, we bring you traditional recipes passed down through generations, featuring our famous charcoal-grilled chicken, authentic mofongos, and fresh tropical flavors that will transport you to the islands.</p>
-                <p class="tagline"><em>¡Sabor auténtico que enciende tu paladar! 🌶️</em></p>
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper" id="navbar">
+    <nav>
+      <a class="brand" href="#home">
+        <img src="fuego-logo.jpg" alt="Fuego a la Lata"/>
+        <span>FUEGO A LA LATA</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#location">Visit</a></li>
+      </ul>
+      <a class="btn-reserve" href="https://order.online/store/-33939279/?pickup=true&hideModal=true&utm_source=gfo&rwg_token=ACgRB3ebRuVDEcSGwLfnNX7a0mIMQVNJrucpSg0owo9evAm71TvWRvAmF4FGwmGmXwv8E0gt_4MvB5S-uAsgx1v9OVrv1lR_zg%3D%3D" target="_blank" rel="noopener">Order Now</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img class="hero-logo" src="fuego-logo.jpg" alt="Fuego a la Lata Fine Dining"/>
+      <div class="hero-badge">Est. 2024 • New City</div>
+      <h1>Fine Caribbean Cuisine</h1>
+      <p class="hero-subtitle">Where Island Heritage Meets Contemporary Excellence</p>
+      <p class="hero-description">Experience the sophisticated evolution of traditional Caribbean and Latin American flavors, meticulously crafted with modern technique and unwavering dedication to culinary artistry.</p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="#menu">Explore Menu</a>
+        <a class="btn-secondary" href="#location">Plan Your Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Our Philosophy</span>
+        <h2 class="section-title">A Culinary Journey Through the Islands</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">At Fuego a la Lata, we honor the rich culinary traditions of the Caribbean and Latin America while embracing contemporary techniques that elevate each dish to an art form.</p>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-content reveal-left">
+          <h3>Passion Refined Through Excellence</h3>
+          <p>Located in the heart of New City, our intimate establishment reimagines Caribbean and Latin American classics through the lens of fine dining. Every dish tells a story of heritage, crafted with locally-sourced ingredients and time-honored recipes passed down through generations.</p>
+          
+          <p>Our culinary team, led by visionary chefs with deep roots in Caribbean cuisine, brings decades of combined experience from renowned kitchens across Latin America and beyond. We source the finest ingredients, from sustainable seafood to heritage produce, ensuring each plate reflects our unwavering commitment to quality.</p>
+          
+          <p>Whether you're experiencing our signature charcoal-grilled chicken or exploring our refined mofongos, each visit promises an unforgettable journey through the vibrant flavors of the islands, executed with precision and presented with elegance.</p>
+          
+          <div class="features">
+            <div class="feature-item">
+              <h4>Heritage Recipes</h4>
+              <p>Authentic Caribbean techniques refined over generations</p>
             </div>
-            <a href="#menu" class="cta-button">Explore Our Menu</a>
+            <div class="feature-item">
+              <h4>Locally Sourced</h4>
+              <p>Premium ingredients from trusted regional partners</p>
+            </div>
+            <div class="feature-item">
+              <h4>Artisanal Craft</h4>
+              <p>Every dish prepared with meticulous attention to detail</p>
+            </div>
+            <div class="feature-item">
+              <h4>Intimate Setting</h4>
+              <p>Personalized service in an elegant atmosphere</p>
+            </div>
+          </div>
         </div>
-    </section>
+        
+        <div class="about-image reveal-right">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1600&auto=format&fit=crop" alt="Fine dining culinary presentation"/>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <main>
-        <div class="chicken-divider">🐔 🌶️ 🐓 🔥 🐔 🌶️ 🐓</div>
+  <!-- Menu -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Culinary Excellence</span>
+        <h2 class="section-title">Our Menu</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">A curated selection of Caribbean and Latin American specialties, each celebrating the vibrant colors, textures, and flavors of island cuisine.</p>
+      </div>
+      
+      <div class="menu-grid">
+        <div class="menu-card reveal-scale" style="animation-delay:0.1s">
+          <h3>🐔 Poultry Specialties</h3>
+          <ul class="menu-items">
+            <li>
+              <div>
+                <strong>Whole Charcoal-Grilled Chicken</strong>
+                <small>Marinated in Caribbean spices, served with fresh celery leaves</small>
+              </div>
+              <span class="price">$23.40</span>
+            </li>
+            <li>
+              <div><strong>Bone-in Fried Chicken</strong><small>Chicharrón De Pollo Con Hueso</small></div>
+              <span class="price">$19.48</span>
+            </li>
+            <li>
+              <div><strong>Boneless Fried Chicken</strong><small>Chicharrón De Pollo Sin Hueso</small></div>
+              <span class="price">$19.48</span>
+            </li>
+            <li>
+              <div><strong>Grilled Chicken Breast</strong></div>
+              <span class="price">$28.58</span>
+            </li>
+          </ul>
+        </div>
 
-        <section id="menu" class="container">
-            <h2 class="section-title">Our Menu</h2>
+        <div class="menu-card reveal-scale" style="animation-delay:0.2s">
+          <h3>🍽️ Mofongos</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Shrimp Mofongo</strong><small>Mofongo De Camarones</small></div>
+              <span class="price">$32.48</span>
+            </li>
+            <li>
+              <div><strong>Mixed Mofongo</strong><small>With cheese, sausage and pork rinds</small></div>
+              <span class="price">$32.48</span>
+            </li>
+            <li>
+              <div><strong>Grilled Or Fried Chicken Mofongo</strong></div>
+              <span class="price">$26.00</span>
+            </li>
+            <li>
+              <div><strong>Garlic Mofongo</strong><small>Mofongo De Ajo</small></div>
+              <span class="price">$25.98</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-card reveal-scale" style="animation-delay:0.3s">
+          <h3>🥩 Premium Meats</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Land And Sea</strong></div>
+              <span class="price">$51.98</span>
+            </li>
+            <li>
+              <div><strong>Grilled Skirt Steak</strong></div>
+              <span class="price">$46.78</span>
+            </li>
+            <li>
+              <div><strong>Smoked Pork Chops</strong></div>
+              <span class="price">$31.18</span>
+            </li>
+            <li>
+              <div><strong>Fried Smoked Pork Strips</strong></div>
+              <span class="price">$28.58</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-card reveal-scale" style="animation-delay:0.4s">
+          <h3>🌮 Tacos & More</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Shrimp Quesadilla With Fries</strong></div>
+              <span class="price">$20.78</span>
+            </li>
+            <li>
+              <div><strong>Beef Patacon</strong></div>
+              <span class="price">$18.18</span>
+            </li>
+            <li>
+              <div><strong>Beef Tacos</strong></div>
+              <span class="price">$18.18</span>
+            </li>
+            <li>
+              <div><strong>Mixed Yaroa</strong></div>
+              <span class="price">$18.18</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-card reveal-scale" style="animation-delay:0.5s">
+          <h3>🥪 Sandwiches</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Cubano With Fries</strong></div>
+              <span class="price">$19.48</span>
+            </li>
+            <li>
+              <div><strong>Chimi | Dominican Burger</strong></div>
+              <span class="price">$16.89</span>
+            </li>
+            <li>
+              <div><strong>Philly Cheesesteak</strong></div>
+              <span class="price">$16.88</span>
+            </li>
+            <li>
+              <div><strong>Grilled Chicken Sandwich</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-card reveal-scale" style="animation-delay:0.6s">
+          <h3>🍲 Appetizers</h3>
+          <ul class="menu-items">
+            <li>
+              <div><strong>Big Chicken Soup With White Rice</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+            <li>
+              <div><strong>Loaded Beef Nachos</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+            <li>
+              <div><strong>Fried Calamari</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+            <li>
+              <div><strong>Tropical Wings</strong></div>
+              <span class="price">$15.58</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section id="location" class="location">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Visit Us</span>
+        <h2 class="section-title">Location & Hours</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="location-grid">
+        <div class="map-container reveal-left">
+          <iframe 
+            title="Fuego a la Lata Fine Dining Location" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.8846831537815!2d-73.98797!3d41.14456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e7c85adf!2s730+NY-304%2C+New+City%2C+NY+10956!5e0!3m2!1sen!2sus!4v1234567890">
+          </iframe>
+        </div>
+        
+        <div class="hours-card reveal-right">
+          <h3>Dining Hours</h3>
+          
+          <div class="hours-line">
+            <span>Online Ordering</span>
+            <strong>11:00 AM – 7:40 PM</strong>
+          </div>
+          <div class="hours-line">
+            <span>Daily</span>
+            <strong>Open Every Day</strong>
+          </div>
+          
+          <div class="contact-info">
+            <div class="contact-item">
+              <label>Address</label>
+              <p>730 Route 304<br>New City, NY 10956-2840</p>
+            </div>
             
-            <div class="featured-item">
-                <h4>🔥 Most Ordered Favorites</h4>
-                <p>The most commonly ordered items and dishes from our kitchen</p>
+            <div class="contact-item">
+              <label>Contact</label>
+              <p>Order Online for Pickup</p>
             </div>
-
-            <div class="menu-grid">
-                <div class="menu-card">
-                    <h3>🐔 Chicken Specialties</h3>
-                    <ul class="menu-items">
-                        <li><strong>Bone-in Fried Chicken / Chicharrón De Pollo Con Hueso</strong> - $19.48</li>
-                        <li><strong>Boneless Fried Chicken / Chicharrón De Pollo Sin Hueso</strong> - $19.48</li>
-                        <li><strong>Whole Charcoal-grilled Chicken</strong> - $23.40<br><small>Marinated in Caribbean spices, served with fresh celery leaves</small></li>
-                        <li><strong>Fried Chicken Meal</strong> - $23.40</li>
-                        <li><strong>Stewed Chicken</strong> - $15.58</li>
-                    </ul>
-                </div>
-
-                <div class="menu-card">
-                    <h3>🫘 Beans / Habichuelas</h3>
-                    <ul class="menu-items">
-                        <li><strong>Large Beans</strong> - $19.50</li>
-                        <li><strong>Medium Beans</strong> - $7.80</li>
-                        <li><strong>Small Beans</strong> - $3.90</li>
-                    </ul>
-                </div>
-
-                <div class="menu-card">
-                    <h3>🍽️ Menu Categories</h3>
-                    <ul class="menu-items">
-                        <li>Lunch Specials / Almuerzo</li>
-                        <li>Breakfast / Desayuno</li>
-                        <li>Appetizers</li>
-                        <li>Sandwiches</li>
-                        <li>Tacos, Quesadillas & Yaroa</li>
-                        <li>Soups / Sopas</li>
-                        <li>Sharing Plates & Combinations</li>
-                        <li>Ensaladas / Salads</li>
-                    </ul>
-                </div>
-
-                <div class="menu-card">
-                    <h3>🌊 Seafood & Specialties</h3>
-                    <ul class="menu-items">
-                        <li>Seafood / Mariscos</li>
-                        <li>Dinner / Cena</li>
-                        <li>Mofongos / Mashed Plantains</li>
-                        <li>Rice / Arroz</li>
-                        <li>Sides / Acompañantes</li>
-                        <li>Empanadas</li>
-                        <li>Meats / Carnes</li>
-                        <li>Desserts / Postres</li>
-                    </ul>
-                </div>
-
-                <div class="menu-card">
-                    <h3>🥤 Drinks & More</h3>
-                    <ul class="menu-items">
-                        <li>Drinks & Smoothies / Bebidas & Batidos</li>
-                        <li>Fresh tropical juices</li>
-                        <li>Traditional Caribbean beverages</li>
-                        <li>Coffee / Café</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="chicken-divider">🌶️ 🔥 🌶️ 🔥 🌶️</div>
-
-        <section id="hours" class="container">
-            <h2 class="section-title">Hours & Location</h2>
-            <div class="hours-container">
-                <div class="hours-info">
-                    <strong>Online Ordering Hours:</strong><br>
-                    11:00 AM - 7:40 PM
-                </div>
-                <div class="address">
-                    📍 <strong>730 Route 304</strong><br>
-                    New City, NY 10956-2840<br>
-                    United States
-                </div>
-            </div>
-        </section>
-
-        <div class="chicken-divider">🐔 🌶️ 🐓 🔥 🐔</div>
-
-        <section id="contact" class="container">
-            <h2 class="section-title">Order Now & Contact</h2>
             
-            <!-- BIG ORDER BUTTONS -->
-            <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;">
-                <a href="https://www.doordash.com/store/fuego-a-la-lata-new-city-new-city-33939279/70926149/?pickup=true" target="_blank" style="background: #ff3008; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(255,48,8,0.3); transition: all 0.3s ease;">
-                    🚗 ORDER ON DOORDASH
-                </a>
-                <a href="https://www.ubereats.com/store/fuego-a-la-lata-new-city/JtLgCFOvT26eLtCBv-Xugg?diningMode=PICKUP" target="_blank" style="background: #00d4aa; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,212,170,0.3); transition: all 0.3s ease;">
-                    🍽️ ORDER ON UBER EATS
-                </a>
-                <a href="https://postmates.com/store/fuego-a-la-lata-new-city/JtLgCFOvT26eLtCBv-Xugg?diningMode=PICKUP" target="_blank" style="background: #000000; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s ease;">
-                    📦 ORDER ON POSTMATES
-                </a>
+            <div class="contact-item">
+              <label>Email</label>
+              <p>hello@fuegoalalata.com</p>
             </div>
+          </div>
+          
+          <a class="btn-primary" href="https://www.google.com/maps/place/730+NY-304,+New+City,+NY+10956" target="_blank" rel="noopener" style="margin-top:32px;display:inline-block">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">📞</div>
-                    <h3>Order Online</h3>
-                    <p>Visit our online ordering platform<br>11:00 AM - 7:40 PM</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <h3>Visit Us</h3>
-                    <p>730 Route 304<br>New City, NY 10956</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">🔥</div>
-                    <h3>Experience</h3>
-                    <p>Authentic Caribbean & Latin flavors<br>Made fresh daily</p>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- CTA -->
+  <section class="cta reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Experience Excellence</h2>
+        <p class="section-description">Join us for an unforgettable culinary journey through the flavors of the Caribbean. Order online for pickup and delivery.</p>
+      </div>
+      <div class="order-buttons">
+        <a class="order-btn doordash" href="https://order.online/store/-33939279/?pickup=true&hideModal=true&utm_source=gfo&rwg_token=ACgRB3ebRuVDEcSGwLfnNX7a0mIMQVNJrucpSg0owo9evAm71TvWRvAmF4FGwmGmXwv8E0gt_4MvB5S-uAsgx1v9OVrv1lR_zg%3D%3D" target="_blank" rel="noopener">🚗 Order on DoorDash</a>
+        <a class="order-btn ubereats" href="https://www.ubereats.com/store/fuego-a-la-lata-new-city/JtLgCFOvT26eLtCBv-Xugg?diningMode=PICKUP" target="_blank" rel="noopener">🍽️ Order on Uber Eats</a>
+        <a class="order-btn postmates" href="https://postmates.com/store/fuego-a-la-lata-new-city/JtLgCFOvT26eLtCBv-Xugg?diningMode=PICKUP" target="_blank" rel="noopener">📦 Order on Postmates</a>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Fresh JavaScript for Fuego a la Lata
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>FUEGO A LA LATA</h4>
+          <p>Celebrating the rich culinary heritage of the Caribbean and Latin America through contemporary fine dining. Each dish honors tradition while embracing innovation, creating an experience that delights both the palate and the soul.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#location">Visit</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Hours</h4>
+          <ul class="footer-links">
+            <li>Online Ordering</li>
+            <li>11:00 AM - 7:40 PM</li>
+            <li>Daily</li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>730 Route 304</li>
+            <li>New City, NY 10956</li>
+            <li><br></li>
+            <li><a href="mailto:hello@fuegoalalata.com">hello@fuegoalalata.com</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Fuego a la Lata. All Rights Reserved. | Fine Caribbean & Latin Cuisine</p>
+      </div>
+    </div>
+  </footer>
 
-            // Scroll progress bar
-            window.addEventListener('scroll', () => {
-                const scrollProgress = document.querySelector('.scroll-progress');
-                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                scrollProgress.style.width = scrolled + '%';
-            });
+  <!-- Floating Reserve Button -->
+  <div class="float-reserve">
+    <a href="https://order.online/store/-33939279/?pickup=true&hideModal=true&utm_source=gfo&rwg_token=ACgRB3ebRuVDEcSGwLfnNX7a0mIMQVNJrucpSg0owo9evAm71TvWRvAmF4FGwmGmXwv8E0gt_4MvB5S-uAsgx1v9OVrv1lR_zg%3D%3D" target="_blank" rel="noopener">
+      <span>🔥</span> Order Now
+    </a>
+  </div>
 
-            // Spicy chicken click counter
-            let clicks = 0;
-            const chicken = document.querySelector('.chicken-decoration');
-            if (chicken) {
-                chicken.addEventListener('click', function() {
-                    clicks++;
-                    this.style.transform = 'scale(1.3) rotate(360deg)';
-                    const spicyTypes = ['🐔', '🌶️', '🔥', '🐓', '🍗'];
-                    this.textContent = spicyTypes[clicks % spicyTypes.length];
-                    
-                    // Add fire effect
-                    if (clicks % 3 === 0) {
-                        const fireEffect = document.createElement('div');
-                        fireEffect.textContent = '🔥🔥🔥';
-                        fireEffect.style.position = 'fixed';
-                        fireEffect.style.bottom = '80px';
-                        fireEffect.style.right = '20px';
-                        fireEffect.style.fontSize = '2rem';
-                        fireEffect.style.zIndex = '999';
-                        fireEffect.style.animation = 'salsa 1s ease-out';
-                        document.body.appendChild(fireEffect);
-                        
-                        setTimeout(() => {
-                            if (fireEffect.parentNode) {
-                                fireEffect.remove();
-                            }
-                        }, 1000);
-                    }
-                    
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1) rotate(0deg)';
-                    }, 500);
-                    
-                    if (clicks === 15) {
-                        alert('🔥 ¡Fuego! You found the spicy secret! 🌶️');
-                    }
-                });
-            }
-
-            // Menu item spicy hover effects
-            document.querySelectorAll('.menu-items li').forEach(item => {
-                item.addEventListener('click', function() {
-                    this.style.transform = 'scale(1.05)';
-                    this.style.background = 'linear-gradient(90deg, transparent, rgba(232, 93, 4, 0.1))';
-                    
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                        this.style.background = 'transparent';
-                    }, 300);
-                });
-            });
-
-            console.log('🔥 Fuego a la Lata is ready! ¡Buen provecho! 🌶️');
-        });
-    </script>
+  <script>
+    // Loading screen
+    window.addEventListener('load',()=>{
+      setTimeout(()=>{
+        document.querySelector('.loader-wrapper').classList.add('hidden');
+        document.body.classList.remove('loading');
+      },800);
+    });
+    
+    // Scroll progress bar
+    window.addEventListener('scroll',()=>{
+      const scrollProgress=document.querySelector('.scroll-progress');
+      const windowHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+      const scrolled=(window.scrollY/windowHeight);
+      scrollProgress.style.transform=`scaleX(${scrolled})`;
+    });
+    
+    // Navbar scroll effects
+    let lastScroll=0;
+    window.addEventListener('scroll',()=>{
+      const navbar=document.getElementById('navbar');
+      const currentScroll=window.scrollY;
+      
+      if(currentScroll>50){
+        navbar.classList.add('scrolled');
+      }else{
+        navbar.classList.remove('scrolled');
+      }
+      
+      if(currentScroll>lastScroll&&currentScroll>500){
+        navbar.classList.add('hidden');
+      }else{
+        navbar.classList.remove('hidden');
+      }
+      
+      lastScroll=currentScroll;
+    });
+    
+    // Parallax effect for hero
+    window.addEventListener('scroll',()=>{
+      const heroBg=document.getElementById('heroBg');
+      const scrolled=window.scrollY;
+      if(heroBg){
+        heroBg.style.transform=`translateY(${scrolled*0.5}px) scale(1.1)`;
+      }
+    });
+    
+    // Scroll reveal animations
+    const revealElements=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+    
+    const revealOnScroll=()=>{
+      revealElements.forEach(el=>{
+        const elementTop=el.getBoundingClientRect().top;
+        const elementVisible=150;
+        
+        if(elementTop<window.innerHeight-elementVisible){
+          el.classList.add('active');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll',revealOnScroll);
+    revealOnScroll(); // Check on load
+  </script>
 </body>
 </html>
